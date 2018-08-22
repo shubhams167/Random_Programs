@@ -1,5 +1,5 @@
 /**********************************************************************
-*	This program is an implementation merge sort algorithm.
+*	This program is an implementation of merge sort algorithm.
 *
 *	Author: Shubham Singh
 *	Date:	22 Aug 2018
