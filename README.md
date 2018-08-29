@@ -1,2 +1,3 @@
-# Random_Programs
-Just Basic C programs
+## Random programs
+
+Here you will find some basic C programs like sorting algorithm implementation codes, some codes for file handling, etc
