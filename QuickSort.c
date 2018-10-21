@@ -2,7 +2,7 @@
 *	This program is an implementation of quick sort algorithm.
 *
 *	Author: Shubham Singh
-*	Date:	07 Sep 2018
+*	Date:	22 Oct 2018
 **********************************************************************/
 
 #include<stdio.h>
@@ -26,22 +26,17 @@ void swap(int *a, int *b)
 **************************************************************************************************/
 int partition(int *a, int l, int r)
 {
-	int pivot = a[l], i = l, j = r + 1;//Select first element as pivot
-	while(i < j)
+	int pivot = a[r], i = l - 1, j;//Select last element as pivot
+	for(j = l; j < r; j++)
 	{
-		do
-		{
-			j--;
-		}while(pivot < a[j]);
-		do
+		if(a[j] <= pivot)
 		{
 			i++;
-		}while(pivot > a[i]);
-		if(i < j)
 			swap(&a[i], &a[j]);
+		}
 	}
-	swap(&a[l], &a[j]);//Swap piot element with a[j]
-	return j;
+	swap(&a[i + 1], &a[r]);//Swap pivot element with a[i + 1]
+	return i + 1;
 }
 
 /**************************************************************************************************
@@ -60,12 +55,17 @@ void quickSort(int *a, int l, int r)
 	}
 }
 
+/*Driver code*/
 int main()
 {
 	int a[] = {20, 5, 23, 67, 20, 40, 30, 60}, n;
 	n = sizeof(a)/sizeof(a[0]);
-	quickSort(a, 0, n - 1);
-	printf("Sorted array is: ");
+	printf("Unsorted array is: ");
 	for(int i = 0; i < n; i++)
 		printf("%d ", a[i]);
+	quickSort(a, 0, n - 1);
+	printf("\nSorted array is: ");
+	for(int i = 0; i < n; i++)
+		printf("%d ", a[i]);
+	return 0;
 }
