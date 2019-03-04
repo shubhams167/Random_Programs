@@ -1,6 +1,5 @@
 /*
-*	Program to implement insertion sort
-*	Author:	Shubham Singh
+*	C program to implement in-place insertion sort
 */
 
 #include<stdio.h>
